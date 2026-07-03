@@ -8,10 +8,12 @@ permissions:
   id-token: write
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: withastro/action@v3
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - uses: withastro/action@v3
+          with:
+            node-version: 22
   deploy:
     needs: build
     runs-on: ubuntu-latest
